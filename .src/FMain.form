@@ -1,0 +1,33 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,104,104)
+  Background = Color.TextForeground
+  { BCalculo Button
+    MoveScaled(38,88,28,10)
+    Text = ("Piensa")
+  }
+  { TNumero TextBox
+    MoveScaled(19,14,66,17)
+    Alignment = Align.Center
+  }
+  { TOperador TextBox
+    MoveScaled(19,41,66,17)
+    Alignment = Align.Center
+  }
+  { LResultado Label
+    MoveScaled(19,67,66,13)
+    Background = Color.TextBackground
+    Alignment = Align.Center
+  }
+  { Label2 Label
+    MoveScaled(19,10,44,4)
+    Foreground = Color.SelectedForeground
+    Text = ("Introduzca los valores")
+  }
+  { Label3 Label
+    MoveScaled(19,37,36,4)
+    Foreground = Color.TextBackground
+    Text = ("Operador")
+  }
+}

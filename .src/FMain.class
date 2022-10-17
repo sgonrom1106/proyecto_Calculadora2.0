@@ -1,0 +1,79 @@
+' Gambas class file
+
+
+Public Sub BCalculo_Click()
+
+  
+  Dim iSeparador As Integer
+  Dim bSeparador, bHayIzq, bHayDer As Boolean
+  Dim sTrozoIzq As String 
+  Dim sTrozoDer As String
+  
+  bSeparador = True
+  bHayIzq = True
+  bHayDer = True
+  
+  ' COGER LOS DATOS
+  
+  iSeparador = InStr(TNumero.Text, ";")
+  
+  ' Debe de haber ";" 
+  ' <> = distinto de x (En este caso, <> se puede sustituit por >)
+  
+  If iSeparador <> 0 Then 
+    ' Bloque Verdad
+    
+    sTrozoIzq = Left$(TNumero.Text, iSeparador - 1)
+    
+    If Len(sTrozoIzq) = 0 Then 
+      bHayIzq = False
+    Endif
+    
+    sTrozoDer = Right$(TNumero.Text, Len(TNumero.Text) - iSeparador)
+    
+    If Len(sTrozoDer) = 0 Then 
+      bHayDer = False
+    Endif
+    
+  Else
+    ' Bloque Falsedad 
+    
+    bSeparador = False
+    
+  Endif
+  
+  ' HACER EL COMANDO, SIEMPRE QUE SEA POSIBLE
+  
+    ' Comprobacion de que los 3 sigan siendo True
+  
+  Select Case TOperador.Text
+    
+    Case "Suma"
+      
+     LResultado.Text = sTrozoIzq + sTrozoDer
+
+    Case "Resta"
+      
+      LResultado.Text = sTrozoIzq.Text - sTrozoDer.Text
+      
+    Case "Multiplicacion"
+      
+      LResultado.Text = sTrozoIzq.Text * sTrozoDer.Text
+      
+    Case "Division"
+      
+      LResultado.Text = sTrozoIzq.Text / sTrozoDer.Text
+    
+    Case Else 
+      
+      LResultado.Text = "Operador desconocido"
+      
+  End Select
+
+    ' If bHayDer And bHayIzq And bSeparador Then 
+    '   
+    '   If TOperador = "Suma" Then
+    '   
+    ' Endif
+  
+End
