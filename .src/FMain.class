@@ -3,7 +3,6 @@
 
 Public Sub BCalculo_Click()
 
-  
   Dim iSeparador As Integer
   Dim bSeparador, bHayIzq, bHayDer As Boolean
   Dim sTrozoIzq As String 
@@ -13,7 +12,7 @@ Public Sub BCalculo_Click()
   bHayIzq = True
   bHayDer = True
   
-  ' COGER LOS DATOS
+  ' Coger los datos en TNumero
   
   iSeparador = InStr(TNumero.Text, ";")
   
@@ -21,6 +20,7 @@ Public Sub BCalculo_Click()
   ' <> = distinto de x (En este caso, <> se puede sustituit por >)
   
   If iSeparador <> 0 Then 
+    
     ' Bloque Verdad
     
     sTrozoIzq = Left$(TNumero.Text, iSeparador - 1)
@@ -63,7 +63,7 @@ Public Sub BCalculo_Click()
     Case "Division"
       
       LResultado.Text = sTrozoIzq.Text / sTrozoDer.Text
-    
+      
     Case Else 
       
       LResultado.Text = "Operador desconocido"
